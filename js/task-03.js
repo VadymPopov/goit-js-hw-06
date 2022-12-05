@@ -14,20 +14,22 @@ const images = [
 ];
 
 const list = document.querySelector(".gallery");
+list.style =
+  "display: flex; align-items: center; justify-content: center; list-style: none; margin: 0px; padding: 0px;";
 
 // images.map((image) => {
 //   const item = document.createElement("li");
 //   const imageEl = document.createElement("img");
 //   imageEl.src = `${image.url}`;
 //   imageEl.alt = `${image.alt}`;
-//   imageEl.width = "300";
+//   imageEl.width = "320";
 //   item.appendChild(imageEl);
 //   list.append(imageEl);
 // });
 
 const markup = images
   .map(({ url, alt }) => {
-    return `<li><img src=${url} alt=${alt} width ="300"></li>`;
+    return `<li style = "width:320px; margin:10px"  ><img src=${url} alt=${alt} width ="320px" height ="180px"></li>`;
   })
   .join("");
 list.insertAdjacentHTML("beforeend", markup);
