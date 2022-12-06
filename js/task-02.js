@@ -8,9 +8,12 @@ const ingredients = [
 ];
 
 const list = document.querySelector("#ingredients");
-ingredients.map((product) => {
+
+const listRefs = ingredients.map((product) => {
   const ingredient = document.createElement("li");
   ingredient.classList.add("item");
   ingredient.textContent = `${product}`;
-  list.append(ingredient);
+  return ingredient;
 });
+
+list.append(...listRefs);
